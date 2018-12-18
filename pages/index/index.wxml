@@ -1,0 +1,61 @@
+<!--pages/index/index.wxml-->
+<view class='speechContest'>
+  <view class='speech-title'>演讲主题</view>
+  <view class='speech-info'>演讲人员：某某某</view>
+  <view class='speech-info'>所在部门：全栈</view>
+  <view class='speech-info'>投票人数：20</view>
+</view>
+<view class='scoreMethod'>
+  <view class='score-describe'>
+    <view class='score-title'>评分方式：</view>
+    <view class='score-info'>星级评分</view>
+  </view>
+  <view class='score-describe'>
+    <view class='score-title'>评分介绍：</view>
+    <view class='score-info'>
+      <view class='score-border'>
+        <view class='score-border-img'>
+          <image src='../../image/star.png'></image>
+          <image src='../../image/star.png'></image>
+          <image src='../../image/star.png'></image>
+          <image src='../../image/star.png'></image>
+          <image src='../../image/star.png'></image>
+        </view>
+        <view class='score-text'>五星最高</view>
+      </view>
+      <view class='score-border'>
+        <view class='score-border-img'>
+          <image src='../../image/star-none.png'></image>
+          <image src='../../image/star-none.png'></image>
+          <image src='../../image/star-none.png'></image>
+          <image src='../../image/star-none.png'></image>
+          <image src='../../image/star-none.png'></image>
+        </view>
+        <view class='score-text'>0星最低</view>
+      </view>
+    </view>
+  </view>
+  <view class='score-describe'>
+    <view class='score-title'>评分方向：</view>
+    <view class='score-all'>
+      <view class='score-direction'>
+        <text>整体印象（15分）</text>
+      </view>
+      <view class='score-direction'>
+        <text>演讲内容（40分）</text>
+      </view>
+      <view class='score-direction'>
+        <text>演讲技巧（20分）</text>
+      </view>
+      <view class='score-direction'>
+        <text>形象风度（15分）</text>
+      </view>
+      <view class='score-direction'>
+        <text>会场效果（10分）</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='scoreBtn'>
+  <navigator url="" hover-class='none'>去评分</navigator>
+</view>

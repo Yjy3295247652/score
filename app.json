@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/record/record",
+    "pages/scan/scan",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1aadf0",
+    "navigationBarTitleText": "优逸客演讲比赛评分",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#a7a7a7",
+    "selectedColor": "#1AADF0",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/record/record",
+        "text": "评分记录",
+        "iconPath": "image/record-none.png",
+        "selectedIconPath": "image/record.png"
+      },
+      {
+        "pagePath": "pages/scan/scan",
+        "text": "扫一扫",
+        "iconPath": "image/scan-none.png",
+        "selectedIconPath": "image/scan.png"
+      }
+    ]
+  }
+}
