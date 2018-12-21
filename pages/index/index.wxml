@@ -1,9 +1,26 @@
 <!--pages/index/index.wxml-->
 <view class='speechContest'>
-  <view class='speech-title'>演讲主题</view>
-  <view class='speech-info'>演讲人员：某某某</view>
-  <view class='speech-info'>所在部门：全栈</view>
-  <view class='speech-info'>投票人数：20</view>
+  <view class='speech-info'>
+    <view class='speech-text'>选择演讲人：</view>
+    <view class="section">
+      <picker bindchange="speechManChange" range="{{classList}}" range-key="userName" value="{{index}}" bindcancel="classNoChange">
+        <view class="picker" data-id="{{index}}">{{classList[index].userName}}</view>
+        <view class='picker-icon'></view>
+      </picker>
+    </view>
+  </view>
+  <view class='speech-info'>
+    <view class='speech-text'>演讲题目：</view>
+    <view class='speech-show'>{{classList[index].userSpeechName}}</view>
+  </view>
+  <view class='speech-info'>
+    <view class='speech-text'>所在部门：</view>
+    <view class='speech-show'>{{classList[index].deptName}}</view>
+  </view>
+  <view class='speech-info'>
+    <view class='speech-text'>投票人数：</view>
+    <view class='speech-show'>{{classList[index].plance}}</view>
+  </view>
 </view>
 <view class='scoreMethod'>
   <view class='score-describe'>
@@ -19,19 +36,19 @@
           <image src='../../image/star.png'></image>
           <image src='../../image/star.png'></image>
           <image src='../../image/star.png'></image>
-          <image src='../../image/star.png'></image>
+          <image src='../../image/star-none.png'></image>
         </view>
-        <view class='score-text'>五星最高</view>
+        <view class='score-text'>一星一分</view>
       </view>
       <view class='score-border'>
         <view class='score-border-img'>
-          <image src='../../image/star-none.png'></image>
+          <image src='../../image/star.png'></image>
           <image src='../../image/star-none.png'></image>
           <image src='../../image/star-none.png'></image>
           <image src='../../image/star-none.png'></image>
           <image src='../../image/star-none.png'></image>
         </view>
-        <view class='score-text'>0星最低</view>
+        <view class='score-text'>一星最低</view>
       </view>
     </view>
   </view>
@@ -57,5 +74,5 @@
   </view>
 </view>
 <view class='scoreBtn'>
-  <navigator url="" hover-class='none'>去评分</navigator>
+  <view class='navigator' bindtap='findFlagBySpeechId'>去评分</view>
 </view>

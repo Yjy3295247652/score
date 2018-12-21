@@ -1,4 +1,4 @@
-// pages/record/record.js
+// pages/ranking/ranking.js
 Page({
 
   /**
@@ -7,21 +7,34 @@ Page({
   data: {
 
   },
-  // 获取域名
   getname() {
     var score = getApp().globalData.host;
     this.setData({
       score: score
     })
   },
-  // 根据微信openid查询打分信息
-  getInfo() {
+  getranking() {
     wx.request({
-      url: this.data.score + '/uektrain/speech/uekSpeechRater/findspeechpersonByOpenId?openId=' + wx.getStorageSync('openId'),
+      url: this.data.score + '/uektrain/speech/uekSpeechPerson/list',
+      data: {
+        limit: 20,
+        offset: 0,
+        speechId: wx.getStorageSync('speechId'),
+        sort: 'last_score',
+        order: 'desc'
+      },
       success: res => {
-        this.setData({
-          recordInfo: res.data.data
-        })
+        if (res.data.total > 0) {
+          this.setData({
+            ranking: res.data.rows
+          })
+        } else {
+          wx.showToast({
+            title: '暂无排名',
+            icon: 'none',
+            duration: 2000
+          })
+        }
       }
     })
   },
@@ -43,7 +56,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    this.getInfo();
+    this.getranking();
   },
 
   /**
@@ -64,8 +77,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    this.getInfo();
-    setTimeout(function() {
+    this.getranking();
+    setTimeout(function () {
       wx.stopPullDownRefresh()
     }, 1000)
   },

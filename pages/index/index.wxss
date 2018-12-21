@@ -13,23 +13,57 @@ page {
   box-sizing: border-box;
 }
 
-.speech-title {
+.speech-info {
   width: 100%;
   height: 80rpx;
-  font-size: 38rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.speech-text {
+  width: 180rpx;
+  height: 100%;
+  text-align: right;
+  line-height: 80rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.speech-show {
+  width: calc(100% - 180rpx);
+  height: 100%;
+  color: #333;
+  font-size: 30rpx;
+  text-align: left;
+  line-height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.section {
+  width: calc(100% - 180rpx);
+  height: 100%;
+}
+
+.section .picker {
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
   color: #333;
   text-align: left;
   line-height: 80rpx;
+  border-radius: 10rpx;
 }
-
-.speech-info {
-  width: 100%;
-  height: 60rpx;
-  color: #666;
-  font-size: 30rpx;
-  line-height: 60rpx;
+.picker-icon{
+  width: 40rpx;
+  height: 40rpx;
+  position: fixed;
+  top: 20rpx;
+  right: 40rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACNElEQVRYR+1VMYsTQRj9XqImWCW1JI0/Ib1soZyrhMyIiyAcFuJVd91dqyhYeWBx18hZiAeCIJlvI9ETCwVr/4Gltb3uOZ/McRvi3G52s56kyZYz87335s37vgUt+MOC+WkpYOnA4h0YDAYrAIYAfojIM2Z+TETyP7qj1+ud7XQ6+wAiETmw1t6DUuobgItThHvGmLXTFuDIu93umIiupNgi8gVa6+9EdGGaUER2mXnjtERkkTtsEfnqHFgF8DKDbNsYs/WvImaQH4pIeBRCpdQ6gJ0MsgfGmEdVRcwir9VqajgcjiddoLXeJKInGWRbxpjteUWUIXeYf7Wh1vo+ET30yURkg5l3y4o4TnsMIPSydZjePF0/MQe01s4F54b/rRlj9opE5N2ciBIA2tk+jZE5iLJEiIibDXeYeT9PRBiGjWaz+Xa61Y7PJkR03Rjz0a/NnYRKqR0A616BtdbejuP4tQ/kyBuNxgGAwNvLJT+RAR9UKfUcwF1v/beI3GRmTtdnkYvIgJnf57lW9C+oKaVeAFj1w+SA4zh+V/XmuSHMUOpEvAJwy9v7BeCGtXZzXtsLQ+iLiKKoniTJGwCqqAtE5CeAflbgsmqLnmBSEwTBmVar5Xr7Wp4IR05EV5n5c5HQeZ5gghVF0bkkScYALvsEVcgLuyDrFkEQNNvt9gciupTuVyWvJMAV9fv98/V6/SkRRUTkZkM0Go0+lbV97hBWAS5bUzqEZQHnPbcUsHRg4Q78ATjc8cSLo/3eAAAAAElFTkSuQmCC) no-repeat center / 32rpx auto;
 }
-
 .scoreMethod {
   width: 100%;
   height: auto;
@@ -119,7 +153,7 @@ page {
   margin: 0 auto;
 }
 
-.scoreBtn navigator{
+.scoreBtn .navigator {
   width: 100%;
   height: 100%;
   text-align: center;

@@ -1,2 +1,17 @@
-<!--pages/record/record.wxml-->
-<text>pages/record/record.wxml</text>
+<view bindchange="swiperTab" class='manager-manage'>
+  <view class='order-empty' wx:if="{{recordInfo.length}}">
+    <block wx:for="{{recordInfo}}" wx:key="{{index}}">
+      <view class='manager-manage-list'>
+        <view class='list-info'>演讲人员：{{item.speech_person.userName}}</view>
+        <view class='list-info'>演讲题目：{{item.speech_person.userSpeechName}}</view>
+        <view class='list-info'>所在部门：{{item.speech_person.deptName}}</view>
+        <view class='list-info'>投票人数：{{item.speech_person.plance}}</view>
+        <view class='class-room'>分数：{{item.totle_score}}</view>
+      </view>
+    </block>
+  </view>
+  <view class='order-empty kong' wx:if="{{recordInfo.length == 0}}">
+    <view class='empty-img'></view>
+    <text class='order-text1'>暂无评分记录，赶紧去添加吧</text>
+  </view>
+</view>

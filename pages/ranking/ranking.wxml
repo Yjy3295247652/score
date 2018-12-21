@@ -1,0 +1,14 @@
+<!--pages/ranking/ranking.wxml-->
+<view class='ranking'>
+  <block wx:for="{{ranking}}" wx:key="{{index}}">
+    <view class='ranking-list'>
+      <view class='ranking-num'>
+        <text>第</text>
+        <text>{{index+1}}</text>
+        <text>名</text>
+      </view>
+      <view class='ranking-name'>{{item.deptName}}-{{item.userName}}</view>
+      <view class='ranking-score'>{{item.lastScore}}</view>
+    </view>
+  </block>
+</view>
